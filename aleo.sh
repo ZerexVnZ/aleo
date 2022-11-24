@@ -32,7 +32,7 @@ if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     exit 1
 fi
 echo -e 'Setting up swapfile...\n'
-curl -s https://api.nodes.guru/swap4.sh | bash
+curl -s https://raw.githubusercontent.com/ZerexVnZ/aleo/main/swap4.sh | bash
 echo "=================================================="
 echo -e 'Installing dependencies...\n' && sleep 1
 apt update
@@ -99,7 +99,7 @@ WantedBy=multi-user.target
 
 echo -e "Installing Aleo Updater\n"
 cd $HOME
-wget -q -O $HOME/aleo_updater_WIP.sh https://api.nodes.guru/aleo3_updater_WIP.sh && chmod +x $HOME/aleo_updater_WIP.sh
+wget -q -O $HOME/aleo_updater_WIP.sh https://raw.githubusercontent.com/ZerexVnZ/aleo/main/aleo3_updater_WIP.sh && chmod +x $HOME/aleo_updater_WIP.sh
 echo "[Unit]
 Description=Aleo Updater
 After=network-online.target
